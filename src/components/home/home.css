@@ -1,0 +1,45 @@
+:root{
+    --primary-key:  #0044ff;
+    --secondary-key: #111111;
+    --terciary-color: #fafafa;
+}
+
+
+.block{
+    display: block;
+}
+.homePage{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.homePage img{
+    width: 640px;
+    margin-top: 30px;
+}
+
+article{
+    
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    /* border:  var(--secondary-key) solid; */
+    border-radius: 6px;
+    padding: 30px;
+    text-shadow: 5px 5px 5px rbga(0,0,0,0.5);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+span{
+    color: var(--primary-key);
+}
+
+
+.description{
+    padding: 20px;
+    word-wrap: break-word;
+}

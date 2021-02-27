@@ -1,0 +1,46 @@
+:root{
+    --primary-key:  #0044ff;
+    --secondary-key: #111111;
+    --terciary-color: #fafafa;
+}
+
+
+.appLogin{
+    display: flex;
+    text-align: center;
+}
+
+form#login{
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    /* border:  0.5px var(--secondary-key) solid; */
+    border-radius: 6px;
+    padding: 30px;
+    text-shadow: 5px 5px 5px rbga(0,0,0,0.5);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+form#login button{
+    margin: auto;
+    margin-top: 20px;
+    width: 40%;
+    padding: 0.3em;
+    font-size: 1.2em;
+    background-color: var(--primary-key);
+    color: var(--terciary-color);
+    border: 1px var(--primary-key) solid !important;
+    border-radius: 6px;
+    transition-duration: 0.2s;
+}
+
+form#login button:hover{
+    background-color: var(--terciary-color);
+    border: 1px solid var(--primary-key);
+    color: var(--primary-key) !important;
+}
+
+a{
+    text-decoration: inherit !important;
+}
