@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+
+body{
+    background-color: #fafafa !important;
+    font-family: 'Titillium Web', sans-serif !important;
+} 
+
+.titleLogo{
+    font-size: 1.5em !important;
+}
+
+:root{
+    --primary-key:  #0044ff;
+    --secondary-key: #111111;
+    --terciary-color: #fafafa;
+}
+
+.mgLarge{
+    margin-left: 52em;
+}
+.appHeader{
+    height: 6em !important;
+}
+
+
+.linkHeader:hover{
+    color: var(--primary-key) !important; 
+    border-bottom: var(--primary-key) 2px solid;
+}
+
+.blueColor{
+    color: var(--primary-key) !important;
+    font-weight: bold;
+}
+
+.loginBtn{
+    width: 5em;
+    border: 1px solid var(--primary-key);
+    color: white !important;
+    background-color: var(--primary-key);
+    border-radius: 6px ;
+    text-align: center;
+    transition-duration: 0.2s;
+}
+
+.loginBtn:hover{
+    background-color: var(--terciary-color);
+    border: 1px solid var(--primary-key);
+    color: var(--primary-key) !important;
+}
+
+.bgBlack{
+    background-color: var(--secondary-key);
+}
+
+footer{
+    color: var(--terciary-color) !important;
+}
+
+.bdBottonBlue{
+    border-bottom: 3px var(--primary-key) solid;
+}
+
+.appHome{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
