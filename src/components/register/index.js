@@ -31,8 +31,8 @@ onRegister = async() => {
         const {name, email, password} = this.state;
         await firebase.register(name, email, password)
         this.props.history.replace('/dashboard')
-    }catch(e){
-        console.log(e.message)
+    }catch(error){
+        console.log(error.message)
     }
 }
 
@@ -45,7 +45,7 @@ onRegister = async() => {
                 <h1 >Register new user</h1>
                 <br/>
                     <label>Your name: </label>
-                    <input type='text' autoFocus value={this.state.name}
+                    <input type='text' autoFocus autoComplete="off" value={this.state.name}
                     onChange={(e) => this.setState({name: e.target.value})} placeholder="Your name"
                     ></input>
                     <br></br>

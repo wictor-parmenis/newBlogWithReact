@@ -17,6 +17,7 @@ class Dashboard extends Component{
         return(
             <div>
                 <h2>Hello {this.state.name}</h2>
+                
             </div>
         )
     }

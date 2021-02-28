@@ -7,11 +7,11 @@ import Home from './components/home'
 import PageLogin from './components/login'
 import Header from './components/header'
 import Footer from './components/footer'
-import Dashboard from './components/dashboard'
+import Dashboard from './components/dashboard/index'
 import Register from './components/register'
 
 
-import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import firebase from './firebase'
 
 
@@ -38,7 +38,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/login" component={PageLogin}/>
-            <Route path="/dashboard" component={Dashboard}/>
+            <Route exact path="/dashboard" component={Dashboard}/>
             <Route path="/register" component={Register}/>
             </Switch>
           <Footer/>

@@ -16,7 +16,7 @@ let firebaseConfig = {
   
 
 class Firebase{
-    constructor(props){
+    constructor(){
         // Initialize Firebase
         firebaseApp.initializeApp(firebaseConfig);
         this.firebaseApp = firebaseApp.database()
@@ -27,7 +27,7 @@ class Firebase{
         }
 
     async register(email, password, name){
-        await firebaseApp.auth().createUserWithEmailAndPassword(email.trim(), password);
+        await firebaseApp.auth().createUserWithEmailAndPassword(email, password);
         const uid = firebaseApp.auth().currentUser.uid;
         return firebaseApp.database().ref('users').child(uid).set({
             name: name
@@ -42,6 +42,10 @@ class Firebase{
 
     getCurrent(){
         return firebaseApp.auth().currentUser && firebaseApp.auth().currentUser.email;
+    }
+
+    getCurrentUid(){
+        return firebaseApp.auth().currentUser && firebaseApp.auth().currentUser.uid;
     }
 }
 
