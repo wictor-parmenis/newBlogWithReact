@@ -13,9 +13,6 @@ class Dashboard extends Component{
     }
 
     // Methods here
-
-
-
     render(){
         return(
             <div>
