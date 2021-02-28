@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './footer.css'
 
 class Footer extends Component{
     constructor(props){
@@ -55,7 +56,7 @@ class Footer extends Component{
 
   <div class="text-center p-3">
     © 2021  
-    <a class="text-white" href="https://mdbootstrap.com/"> wictortec.com</a>
+    <a class="text-white" href="https://github.com/wictor-parmenis/"> wictortec.com</a>
   </div>
 </footer>
             </div>

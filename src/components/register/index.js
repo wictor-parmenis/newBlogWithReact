@@ -28,8 +28,8 @@ class Register extends Component{
 
 onRegister = async() => {
     try{
-        const {name, email, password} = this.state;
-        await firebase.register(name, email, password)
+        const {email, password, name} = this.state;
+        await firebase.register(email, password, name)
         this.props.history.replace('/dashboard')
     }catch(error){
         console.log(error.message)
@@ -46,12 +46,14 @@ onRegister = async() => {
                 <br/>
                     <label>Your name: </label>
                     <input type='text' autoFocus autoComplete="off" value={this.state.name}
-                    onChange={(e) => this.setState({name: e.target.value})} placeholder="Your name"
+                    onChange={(e) => this.setState({name: e.target.value})} 
+                    placeholder="Your name"
                     ></input>
                     <br></br>
                     <label>Your email address: </label>
                     <input type='email' autoComplete="off" value={this.state.email}
-                    onChange={(e) => this.setState({email: e.target.value})} placeholder="email"
+                    onChange={(e) => this.setState({email: e.target.value})} 
+                    placeholder="email"
                     ></input>
                     <br></br>
                     <label>Your password: </label>

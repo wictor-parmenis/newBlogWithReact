@@ -19,6 +19,8 @@ class Firebase{
     constructor(){
         // Initialize Firebase
         firebaseApp.initializeApp(firebaseConfig);
+
+        // a specie of "export default of database"
         this.firebaseApp = firebaseApp.database()
     };
 
@@ -34,6 +36,10 @@ class Firebase{
         })
     }
     
+    logout(){
+        firebaseApp.auth().signOut()
+    }
+
     isInitialized(){
         return new Promise(resolve => {
             firebaseApp.auth().onAuthStateChanged(resolve)
@@ -44,9 +50,15 @@ class Firebase{
         return firebaseApp.auth().currentUser && firebaseApp.auth().currentUser.email;
     }
 
-    getCurrentUid(){
-        return firebaseApp.auth().currentUser && firebaseApp.auth().currentUser.uid;
+    async getUserName(callback){
+        if(!firebaseApp.auth().currentUser){
+            return null;
+        }
+        const uid = firebaseApp.auth().currentUser.uid;
+        await firebaseApp.database().ref('users').child(uid).once('value')
+            .then(callback)
+
+        }
     }
-}
 
 export default new Firebase;

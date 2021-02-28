@@ -28,6 +28,7 @@ class Home extends Component{
                     writer: children.val().writer
                 })
             });
+            state.post.reverse();
             this.setState(state);
         })
     }

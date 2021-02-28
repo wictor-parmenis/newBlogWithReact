@@ -18,13 +18,13 @@ class Login extends Component{
     // Methods here;
     componentDidMount(){
         if (firebase.getCurrent()){
-            return this.props.history.replace('/dashboard')
+            return this.props.history.replace('dashboard')
         }
     }
 
     login(e){
         e.preventDefault();
-        this.login();
+        this.enter();
     }
 
     enter = async() => {

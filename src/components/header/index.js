@@ -26,7 +26,6 @@ class Header extends Component{
                 <h3><Link to="/">Wictor Tec</Link></h3>
               </div>
               <div className="menuHeader">
-                    <Link to="/services" className="linkHeader">Services</Link>
                     <Link to="/about" className="linkHeader">About</Link>
                     <Link to="/login" className="linkHeader">Login</Link>
                     <Link to="/register" className="loginBtn">Register</Link>

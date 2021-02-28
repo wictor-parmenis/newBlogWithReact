@@ -1,0 +1,83 @@
+:root{
+    --primary-key:  #0044ff;
+    --secondary-key: #111111;
+    --terciary-color: #fafafa;
+}
+
+.app-dashboard{
+    display: flex;
+    
+}
+
+.logoutIcon img{
+    width: 30px;
+}
+
+#userinfo{
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    /* border:  0.5px var(--secondary-key) solid; */
+    border-radius: 8px;
+    padding: 30px;
+    text-shadow: 5px 5px 5px rbga(0,0,0,0.5);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    
+}
+
+#userinfo button{
+    text-align: center;
+    /* margin: auto;
+    margin-top: 15px; */
+    /* width: 40%; */
+    padding: 0.3em;
+    font-size: 1.2em;
+    background-color: var(--primary-key);
+    color: var(--terciary-color);
+    border: 1px var(--primary-key) solid !important;
+    border-radius: 6px;
+    transition-duration: 0.2s;
+}
+
+/* button:hover{
+    background-color: var(--terciary-color);
+    border: 1px solid var(--primary-key);
+    color: var(--primary-key) !important;
+} */
+
+
+#new-post{
+    width: 40%;
+    margin: auto;
+    margin-top: 1em;
+    text-align: center;
+}
+
+#new-post a{
+    color: var(--terciary-color);
+    text-decoration: inherit !important;
+    
+}
+
+
+
+
+.logout-button{
+    background-color: lightcoral;
+    padding: 0.1em;
+    width: 20%;
+    font-size: 1.1em;
+    border: 1px solid lightcoral !important;
+    margin: auto;
+    margin-top: 2em;
+}
+
+.logout-button:hover{
+    transition-duration: 0.2s;
+    color: lightcoral !important;
+    background-color: var(--terciary-color) !important;
+    border: 1px solid lightcoral !important;
+}
+
