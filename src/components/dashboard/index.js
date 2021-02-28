@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './dashboard.css'
 import {Link, withRouter} from 'react-router-dom'
+import './dashboard.css'
 
 class Dashboard extends Component{
     constructor(props){
@@ -15,9 +15,15 @@ class Dashboard extends Component{
     // Methods here
     render(){
         return(
-            <div>
-                <h2>Hello {this.state.name}</h2>
-                
+            <div id="dashboard">
+                <div id="userinfo">
+                    <h2>Hello {this.state.name}</h2>
+                    <Link to="/dashboard/new">New post</Link>
+                </div>
+                <hr/>
+                <div id="tips">
+                    <h2>Guide use</h2>
+                </div>
             </div>
         )
     }

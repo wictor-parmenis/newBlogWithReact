@@ -23,7 +23,7 @@ class App extends Component {
 
   componentDidMount(){
     firebase.isInitialized().then((results) => {
-      this.setState({firebaseInitialized: true})
+      this.setState({firebaseInitialized: results})
     });
 
   };
