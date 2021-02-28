@@ -47,7 +47,9 @@ class New extends Component{
             })
         }
     }
-
+    /*
+    Feature of add image with firestore in branch firestore;
+    */
 
     render(){
         return(
