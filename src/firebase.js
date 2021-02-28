@@ -27,7 +27,7 @@ class Firebase{
         }
 
     async register(email, password, name){
-        await firebaseApp.auth().createUserWithEmailAndPassword(email, password, name);
+        await firebaseApp.auth().createUserWithEmailAndPassword(email.trim(), password);
         const uid = firebaseApp.auth().currentUser.uid;
         return firebaseApp.database().ref('users').child(uid).set({
             name: name
@@ -38,6 +38,10 @@ class Firebase{
         return new Promise(resolve => {
             firebaseApp.auth().onAuthStateChanged(resolve)
         });
+    };
+
+    getCurrent(){
+        return firebaseApp.auth().currentUser && firebaseApp.auth().currentUser.email;
     }
 }
 
