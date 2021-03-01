@@ -8,12 +8,15 @@ class New extends Component{
         super(props);
         this.state = {
             title: '',
-            image: '',
+            image: null,
+            url : '',
             description: '',
             writer: ''
         };
         // Binded functions;
         this.cadaster = this.cadaster.bind(this);
+        this.handleFile = this.handleFile.bind(this);
+        this.handleUpload = this.handleUpload.bind(this);
     }
 
     // Methods here;
@@ -47,6 +50,41 @@ class New extends Component{
             })
         }
     }
+    handleFile = async(e) => {
+        if(e.target.files[0]){
+            const image = e.target.files[0];
+            if(image.type === 'image/jpeg' || image.type === 'image/png'){
+                await this.setState({image: image});
+                this.handleUpload();
+            }else{
+                alert('Send image of type png or jpeg.');
+                this.setState({image: null})
+                return null
+            };   
+        }
+    }
+
+    handleUpload = async () => {
+        const {image} = this.state;
+        const currentUid = firebase.getCurrentUid();
+        const uploadImgs = firebase.storage.ref(`images/${currentUid}/${image.name}`)
+            .put(image);
+
+        /*await uploadImgs.on('state-changed', 
+            (snapshot) => {
+                // progress 
+            },
+            (error) =>{
+                // error
+                console.log('Error image: ' + error)
+            },
+            () => {
+                // success
+            })*/
+
+        // Falta criar uam função para pegar o uid do usuários e colocar no nome da pasta
+        // do storage
+    }
 
 
     render(){
@@ -59,12 +97,13 @@ class New extends Component{
 
                 <form className="card" id="public" onSubmit={this.cadaster} >
                     <h2>New Tip Here</h2>
+
+                    <input type="file" onChange={this.handleFile} />
+
                     <label>Title: </label><br/>
                     <input placeholder="title of yout tip" autoFocus type="text" value={this.state.title}
                     onChange={(e) => {this.setState({ title: e.target.value})}} /><br/>
-                    <label>Url of image: </label><br/>
-                    <input placeholder="url of image" type="text" value={this.state.image}
-                    onChange={(e) => {this.setState({ image: e.target.value})}} /><br/>
+
                     <label>Description: </label><br/>
                     <textarea placeholder="Your tip for comunity..." type="text" value={this.state.description}
                     onChange={(e) => {this.setState({ description: e.target.value})}}></textarea>
