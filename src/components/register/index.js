@@ -42,7 +42,7 @@ onRegister = async() => {
                     
                 <br></br>
                 <form className="card" id="register" onSubmit={this.register}>
-                <h1 >Register new user</h1>
+                <h2 >Register new user</h2>
                 <br/>
                     <label>Your name: </label>
                     <input type='text' autoFocus autoComplete="off" value={this.state.name}

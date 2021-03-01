@@ -53,7 +53,7 @@ class Login extends Component{
         return(
             <div className="appLogin" >
                 <form onSubmit={this.login} className="card" id="login">
-                    <h1>Login</h1>
+                    <h2>Login</h2>
                     <br/>
                     <label>Your email address: </label>
                     <input type='email' autoComplete="off" autoFocus value={this.state.email}

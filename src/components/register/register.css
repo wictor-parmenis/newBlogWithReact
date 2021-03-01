@@ -45,3 +45,13 @@ form#register button:hover{
 form#register a{
     text-decoration: inherit !important;
 }
+
+@media screen and (max-width: 800px){
+    form#register{
+        width: 80% !important;
+        max-width: 240px;
+        font-size: 0.9em;
+        padding: 15px;
+    }
+
+}

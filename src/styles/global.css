@@ -25,15 +25,16 @@ body{
 
 footer{
     color: var(--terciary-color) !important;
+    margin-top: 2em;
 }
 
 .bdBottonBlue{
     border-bottom: 3px var(--primary-key) solid;
 }
 
-.appHome{
+/* .appHome{
     margin-top: 2em;
     margin-bottom: 2em;
-}
+} */
 
 

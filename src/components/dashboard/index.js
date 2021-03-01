@@ -52,6 +52,13 @@ class Dashboard extends Component{
                 <hr/>
                 <div id="tips">
                     <h2>Guide use</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet tincidunt lorem. Donec condimentum quam vel risus dignissim, nec pellentesque arcu tempor. Nunc aliquam varius lectus quis porta.
+                    </p>
+                    <p>
+                        Nunc id nisl eros. Vivamus facilisis est tellus, eu tincidunt dui lobortis in. Pellentesque sit amet fringilla risus. Proin ac nibh posuere, auctor magna vitae, mattis neque. Etiam pretium nisi a tristique semper. Integer iaculis rhoncus scelerisque. Proin mollis elementum erat at gravida.
+                    </p>
+                    <p>Quisque vel nisi magna. Mauris vel ligula pretium, varius ante sit amet, bibendum nulla. Donec egestas velit eget pulvinar lobortis. Aenean massa sem, vestibulum ut venenatis vel, porttitor vel neque. </p>
                 </div>
             </div>
         )

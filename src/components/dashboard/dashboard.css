@@ -81,3 +81,21 @@
     border: 1px solid lightcoral !important;
 }
 
+#tips{
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    /* border:  var(--secondary-key) solid; */
+    /* border-radius: 6px; */
+    padding: 30px;
+    /* text-shadow: 5px 5px 5px rbga(0,0,0,0.5);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5); */
+    margin-bottom: 30px;
+}
+
+#tips h2{
+    text-align: center;
+    margin-bottom: 1em;
+    color: var(--primary-key);
+}
+
