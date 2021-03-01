@@ -48,11 +48,7 @@ class Dashboard extends Component{
                     <p>Logged with {firebase.getCurrent()}</p>
                     <button  className="logout-button" onClick={() => this.logout()}>Logout</button>
                     
-                </div>
-                <hr/>
-                <div id="tips">
-                    <h2>Guide use</h2>
-                </div>
+                </div>                
             </div>
         )
     }

@@ -32,15 +32,19 @@ class New extends Component{
         e.preventDefault();
 
         if (this.state.title !== '' &&
-        this.state.description !== '' &&
-        this.state.image !== ''){
+            this.state.description !== '' &&
+            this.state.image !== '' &&
+            this.state.image !== null &&
+            this.state.url !== ''){
             let posts = firebase.firebaseApp.ref('posts');
             let db_key = posts.push().key;
             await posts.child(db_key).set({
                 title: this.state.title,
-                image: this.state.image,
+                image: this.state.url,
                 description: this.state.description,
-                writer: localStorage.name
+                writer: localStorage.name,
+                progress: 0,
+                progressMsg: ''
             });
 
             this.props.history.push('/dashboard')
@@ -70,9 +74,20 @@ class New extends Component{
         const uploadImgs = firebase.storage.ref(`images/${currentUid}/${image.name}`)
             .put(image);
 
-        /*await uploadImgs.on('state-changed', 
+        await uploadImgs.on('state-changed', 
             (snapshot) => {
                 // progress 
+                const progress = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+                this.setState({
+                    progress
+                })
+                if(this.state.progress == 100){
+                    this.setState({
+                        progressMsg: 'Image sended'
+                    })
+                }
             },
             (error) =>{
                 // error
@@ -80,7 +95,14 @@ class New extends Component{
             },
             () => {
                 // success
-            })*/
+                firebase.storage.ref(`images/${currentUid}`)
+                    .child(image.name).getDownloadURL()
+                        .then(url => {
+                            this.setState({
+                                url: url
+                            })
+                        })
+            })
 
         // Falta criar uam função para pegar o uid do usuários e colocar no nome da pasta
         // do storage
@@ -99,6 +121,13 @@ class New extends Component{
                     <h2>New Tip Here</h2>
 
                     <input type="file" onChange={this.handleFile} />
+
+                    {this.state.url !== '' ? 
+                <img src={this.state.url}/> :
+                <progress value={this.state.progress} ></progress>    
+                }
+
+                <span className='alert-success' id="progress-image" > {this.state.progressMsg} </span>
 
                     <label>Title: </label><br/>
                     <input placeholder="title of yout tip" autoFocus type="text" value={this.state.title}
