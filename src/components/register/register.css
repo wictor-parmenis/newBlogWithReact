@@ -49,7 +49,7 @@ form#register a{
 @media screen and (max-width: 800px){
     form#register{
         width: 80% !important;
-        max-width: 240px;
+        max-width: 260px;
         font-size: 0.9em;
         padding: 15px;
     }
