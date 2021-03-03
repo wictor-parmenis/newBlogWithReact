@@ -111,4 +111,8 @@
         background-color: lightcoral !important;
         border: 1px solid lightcoral !important;
     }
+
+    #tips{
+        font-size: 0.9em;
+    }
 }
